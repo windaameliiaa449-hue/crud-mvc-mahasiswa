@@ -1,0 +1,192 @@
+/* ========== RESET DASAR ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* ========== WARNA UTAMA ========== */
+:root {
+  --primary: #00ffea;
+  --primary-hover: #004ed1;
+  --secondary: #888;
+  --bg: #f4f6f8;
+  --card-bg: #fff;
+  --border: #e1e4e8;
+  --text-dark: #222;
+}
+
+/* ========== BODY & CONTAINER ========== */
+body {
+  background-color: var(--bg);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 900px;
+  margin: 50px auto;
+  background: var(--card-bg);
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  padding: 30px 40px;
+  transition: all 0.2s ease-in-out;
+}
+
+/* ========== HEADING ========== */
+h1, h2 {
+  color: var(--primary);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* ========== TOMBOL ========== */
+.btn,
+button.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-width: 100px;
+  height: 38px;
+  padding: 0 14px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+  background: var(--primary);
+  color: #fff;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.btn:hover,
+button.btn:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+.btn:active,
+button.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-muted {
+  background: var(--secondary);
+}
+
+.btn-muted:hover {
+  background: #666;
+}
+
+/* ========== TABEL ========== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+table thead {
+  background: var(--primary);
+  color: #fff;
+}
+
+table th,
+table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+
+table tr:nth-child(even) {
+  background: #f9fbfd;
+}
+
+table tr:hover {
+  background: #eef3ff;
+}
+
+/* Link aksi di tabel */
+table a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+table a:hover {
+  text-decoration: underline;
+}
+
+/* ========== FORM ========== */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form label {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.form input[type="text"],
+.form input[type="number"],
+.form input[type="email"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  transition: border 0.2s;
+  width: 100%;
+}
+
+.form input:focus {
+  border-color: var(--primary);
+}
+
+/* Tombol di form */
+button.btn {
+  margin-top: 10px;
+}
+
+/* ========== RESPONSIF ========== */
+@media (max-width: 600px) {
+  .container {
+    padding: 20px;
+  }
+
+  table thead {
+    display: none;
+  }
+
+  table, table tbody, table tr, table td {
+    display: block;
+    width: 100%;
+  }
+
+  table tr {
+    margin-bottom: 15px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: #fff;
+    padding: 10px;
+  }
+
+  table td {
+    padding: 8px 10px;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  table td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    color: #555;
+  }
+}
